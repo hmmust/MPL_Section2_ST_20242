@@ -10,5 +10,4 @@ app.use(bodyparser({urlencoded:false}));
 app.use("/resources",express.static(path.join(__dirname,'public')));
 app.use("/product",productRouter);
 app.use(errorRouter);
-
 app.listen(8080);
