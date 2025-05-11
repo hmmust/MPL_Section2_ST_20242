@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "mongodb": "^6.16.0",
+    "mongoose": "^8.14.2",
+    "node": "^22.14.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "name": "shop-app",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "hossam mustafa",
+  "license": "ISC",
+  "description": ""
+}
