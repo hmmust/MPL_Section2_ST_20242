@@ -1,0 +1,28 @@
+<%- include('../partials/head', {title:PageTitle})%>
+<%- include('../partials/nav')%>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+    <form method="post" action="">
+        <div class="form-group">
+            <label for="name" >Name</label>
+            <input class="form-control" value="<%= product.name%>" type="text" name="name">
+        </div>
+        <div class="form-group">
+            <label for="type" >Type</label>
+            <input class="form-control"  value="<%= product.type%>" type="text" name="type">
+        </div>
+        <div class="form-group">
+            <label for="price" >Price</label>
+            <input class="form-control"  value="<%= product.price%>" type="text" name="price">
+        </div>
+        <div class="form-group">
+            <label for="description" >Description</label>
+            <input class="form-control"  value="<%= product.description %>" type="text" name="description">
+        </div>
+        <input class="btn btn-success mb-2" type="submit" value="Save"><br>
+    </form> 
+</div>
+</div>
+</div>
+<%- include('../partials/footer')%>
