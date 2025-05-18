@@ -22,7 +22,23 @@ exports.getEditProduct= (req,res,next)=> {
 
     });
 };
-exports.postEditProduct= (req,res,next)=>{};
+exports.postEditProduct= (req,res,next)=>{
+    n=req.body.name;
+    t=req.body.type;
+    pr=req.body.price;
+    d=req.body.descripton;
+    id= req.body.id;
+    product.findById(id).then((p)=>{
+        p.name= n;
+        p.type=t;
+        p.descripton=d;
+        p.price=pr;
+        p.save().then((p)=>{
+            res.redirect("/admin/products");
+        });
+
+    });
+};
 exports.postDeleteProduct= (req,res,next)=>{
     product.findByIdAndDelete(req.body.id ).then((p)=>{
         res.redirect("/admin/products");

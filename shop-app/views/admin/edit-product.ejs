@@ -3,7 +3,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-    <form method="post" action="">
+    <form method="post" action="/admin/edit-product">
+        <input type="hidden" name="id" value="<%= product._id%>">
         <div class="form-group">
             <label for="name" >Name</label>
             <input class="form-control" value="<%= product.name%>" type="text" name="name">

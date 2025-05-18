@@ -1,6 +1,7 @@
 
 exports.getIndex = (req,res,next)=> {
-res.render('shop/index',{PageTitle:'Shop Home'});
+//res.render('shop/index',{PageTitle:'Shop Home'});
+res.render('auth/login',{PageTitle:'Shop Home'});
 };
 exports.getProducts = (req,res,next)=> {};
 exports.getProduct = (req,res,next)=> {};

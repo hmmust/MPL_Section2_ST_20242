@@ -6,7 +6,7 @@
         <th>Name</th>
         <th>Type</th>
         <th>Price</th>
-        <th>Actions</th>
+        <th colspan="2">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -17,11 +17,11 @@
         <td><%= p.price %></td>
         <td>
             <a href="/admin/edit-product/<%= p._id %>" class="btn btn-success">Edit</a>
+        </td><td>
             <form action="/admin/delete-product/" method="post">
                 <input type="hidden" value="<%= p._id %>" name="id">
                 <button type="submit" class="btn btn-warning">Delete</button>
             </form>
-
         </td>   
 
       </tr>
