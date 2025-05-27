@@ -1,7 +1,8 @@
 const product = require("../models/product");
 
 exports.getAddProduct= (req,res,next)=> {
-    res.render('admin/add-product',{PageTitle:'Shop Home'});
+    res.render('admin/add-product',{PageTitle:'Shop Home',
+        isAuth:req.session.isAuth});
 };
 exports.postAddProduct= (req,res,next)=>{
     n=req.body.name;
@@ -17,7 +18,8 @@ exports.getEditProduct= (req,res,next)=> {
     ProdId= req.params.ProductId;
     product.findById(ProdId).then((p)=>{
         res.render('admin/edit-product',{PageTitle:'Shop Home',
-            product:p
+            product:p,
+            isAuth:req.session.isAuth
         });
 
     });
@@ -46,7 +48,8 @@ exports.postDeleteProduct= (req,res,next)=>{
 };
 exports.getProducts = (req,res,next)=> {
     product.find().then((p)=>{
-        res.render('admin/list-products',{PageTitle:'Shop Home',products:p});
+        res.render('admin/list-products',{PageTitle:'Shop Home',products:p,
+            isAuth:req.session.isAuth});
     })
     
 
