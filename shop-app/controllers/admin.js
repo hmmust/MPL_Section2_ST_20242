@@ -1,8 +1,17 @@
 const product = require("../models/product");
 
 exports.getAddProduct= (req,res,next)=> {
+    errors = req.flash('add_errors');
+    messages=[]
+    feilds={name:"",price:1,descripton:"",type:""}
+    if(errors.length>0)
+        messages = errors[0].error_messages;
+        feilds= errors[0].old_data;
+    console.log(messages,feilds)
     res.render('admin/add-product',{PageTitle:'Shop Home',
-        isAuth:req.session.isAuth});
+            isAuth:req.session.isAuth,messages:messages,
+        feilds:feilds});
+
 };
 exports.postAddProduct= (req,res,next)=>{
     n=req.body.name;
